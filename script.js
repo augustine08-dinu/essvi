@@ -1,5 +1,4 @@
-```javascript
-// ESSVI Internationals — Contact Details
+ESSVI Internationals — Contact Details
 const ESSVI_CONTACT = {
   whatsappNumber: "919567709818", // Country code + number, digits only
   phoneNumber: "+919567709818",
