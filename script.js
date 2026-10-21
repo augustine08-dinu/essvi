@@ -9,11 +9,7 @@ const ESSVI_CONTACT = {
 const contactLinks = {
   whatsapp: { href: `https://wa.me/${ESSVI_CONTACT.whatsappNumber}`, ready: !ESSVI_CONTACT.whatsappNumber.includes("X"), text: "Start a WhatsApp chat" },
   email: { href: `mailto:${ESSVI_CONTACT.email}`, ready: !ESSVI_CONTACT.email.includes("example.com"), text: ESSVI_CONTACT.email },
-  phone: {
-  href: `tel:${ESSVI_CONTACT.phoneNumber.replace(/[^\d+]/g, "")}`,
-  ready: !ESSVI_CONTACT.phoneNumber.includes("X"),
-  text: ESSVI_CONTACT.phoneNumber
-},
+  phone: { href: `tel:${ESSVI_CONTACT.phoneNumber.replace(/[^+\\d]/g, "")}`, ready: !ESSVI_CONTACT.phoneNumber.includes("X"), text: ESSVI_CONTACT.phoneNumber },
   facebook: { href: ESSVI_CONTACT.facebookUrl, ready: !ESSVI_CONTACT.facebookUrl.includes("REPLACE-WITH"), text: "Visit our Facebook page" },
   instagram: { href: ESSVI_CONTACT.instagramUrl, ready: !ESSVI_CONTACT.instagramUrl.includes("REPLACE-WITH"), text: "Visit our Instagram profile" }
 };
@@ -93,6 +89,3 @@ document.querySelector("#quoteForm")?.addEventListener("submit", (event) => {
 
   window.location.href = `mailto:${businessEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
-
-
-update this code
