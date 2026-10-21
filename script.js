@@ -1,3 +1,35 @@
+// Replace these placeholders with the client's verified contact details before publishing.
+const ESSVI_CONTACT = {
+  whatsappNumber: "+919567709818", // Country code + number, digits only
+  phoneNumber: "+919567709818",
+  email: "essvi.international@gmail.com",
+  facebookUrl: "https://www.facebook.com/REPLACE-WITH-OFFICIAL-PAGE",
+  instagramUrl: "https://www.instagram.com/REPLACE-WITH-OFFICIAL-PROFILE"
+};
+const contactLinks = {
+  whatsapp: { href: `https://wa.me/${ESSVI_CONTACT.whatsappNumber}`, ready: !ESSVI_CONTACT.whatsappNumber.includes("X"), text: "Start a WhatsApp chat" },
+  email: { href: `mailto:${ESSVI_CONTACT.email}`, ready: !ESSVI_CONTACT.email.includes("example.com"), text: ESSVI_CONTACT.email },
+  phone: { href: `tel:${ESSVI_CONTACT.phoneNumber.replace(/[^+\\d]/g, "")}`, ready: !ESSVI_CONTACT.phoneNumber.includes("X"), text: ESSVI_CONTACT.phoneNumber },
+  facebook: { href: ESSVI_CONTACT.facebookUrl, ready: !ESSVI_CONTACT.facebookUrl.includes("REPLACE-WITH"), text: "Visit our Facebook page" },
+  instagram: { href: ESSVI_CONTACT.instagramUrl, ready: !ESSVI_CONTACT.instagramUrl.includes("REPLACE-WITH"), text: "Visit our Instagram profile" }
+};
+document.querySelectorAll("[data-contact-link]").forEach((link) => {
+  const key = link.dataset.contactLink;
+  const item = contactLinks[key];
+  if (!item) return;
+  link.href = item.href;
+  if (!item.ready) {
+    link.classList.add("contact-link-placeholder");
+    link.title = "Add the client's verified contact details in script.js before publishing.";
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      alert("Please add the client's verified " + key + " details in script.js before publishing this website.");
+    });
+  }
+  const text = link.querySelector("[data-contact-text]");
+  if (text && item.ready) text.textContent = item.text;
+});
+
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
 
