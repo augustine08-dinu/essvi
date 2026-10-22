@@ -15,7 +15,7 @@ const whatsappMessage =
 
 // 3. FORMSPREE CONFIGURATION
 // Replace YOUR_FORM_ID with the ID from your Formspree dashboard.
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xkjodelr";
 
 // 4. CONTACT LINKS
 const contactLinks = {
