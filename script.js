@@ -1,7 +1,7 @@
 // Replace these placeholders with the client's verified contact details before publishing.
 const ESSVI_CONTACT = {
   whatsappNumber: "+919567709818", // Country code + number, digits only
-  phoneNumber: "919567709818",
+  phoneNumber: "9567709818",
   email: "essvi.international@gmail.com",
   facebookUrl: "https://www.facebook.com/REPLACE-WITH-OFFICIAL-PAGE",
   instagramUrl: "https://www.instagram.com/REPLACE-WITH-OFFICIAL-PROFILE"
