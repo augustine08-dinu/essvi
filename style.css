@@ -107,3 +107,77 @@
         font-size: 21px;
     }
 }
+
+
+/* HOME HERO VIDEO BACKGROUND */
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--green-deep);
+}
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Dark overlay keeps hero text readable over the moving video */
+.hero-shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 42, 31, 0.90) 0%,
+            rgba(7, 49, 36, 0.72) 48%,
+            rgba(7, 49, 36, 0.40) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(4, 38, 28, 0.65),
+            transparent 65%
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-scroll {
+    z-index: 1;
+}
+
+@media (max-width: 760px) {
+    .hero-video {
+        object-position: center;
+    }
+
+    .hero-shade {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(5, 42, 31, 0.90),
+                rgba(7, 49, 36, 0.65)
+            ),
+            linear-gradient(
+                0deg,
+                rgba(4, 38, 28, 0.75),
+                transparent 70%
+            );
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-video {
+        display: none;
+    }
+}
